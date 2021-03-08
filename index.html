@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Animacija</title>
+    <style>
+        body {
+            margin-top: 10%;
+            margin-right: 33%;
+            margin-left: 33%;
+            background-color: black;
+        }
+
+        #box1 {
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+            border-radius: 50%;
+            filter: blur(69px);
+        }
+
+        #box2 {
+            position: absolute;
+            margin-left: 20px;
+            margin-top: 20px;
+            width: 410px;
+            height: 410px;
+            border-radius: 50%;
+            background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+        }
+
+        #box3 {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: black;
+            margin-top: 50px;
+            margin-left: 50px;
+        }
+
+        #box3::after {
+            position: absolute;
+            content: "";
+            height: 330px;
+            width: 330px;
+            border-radius: 50%;
+            background: #0a0422;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        #box2 {
+            animation-name: rotacija;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-duration: 1s;
+        }
+
+        #box1 {
+            animation-name: rotacija;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-duration: 1s;
+        }
+
+
+        #box3::after {
+            animation-name: puls;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+            animation-duration: 1s;
+        }
+
+          @keyframes rotacija {
+            from {
+                transform: rotateZ(0deg);
+            }
+            to {
+                transform: rotateZ(360deg);
+            }
+        }
+
+        @keyframes puls {
+            from {
+                transform: scale(0.1);
+            }
+            to {
+                transform: scale(0.9);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+</body>
+
+</html>
